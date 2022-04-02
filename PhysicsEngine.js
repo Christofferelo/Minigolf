@@ -14,16 +14,10 @@ class PhysicsEngine{
         return friction
     }
 
-    /*
-    inelasticCollision(physicsEntity, staticEntity) {
-        let projectileVelocity = physicsEntity.vel.copy()
-        let surfaceNormal = getNormal(staticEntity.surfaceVector)
-        return projectileVelocity.reflect(surfaceNormal)
-    }*/
-
     inelasticEdgeCollision(physicsEntity, edge) {
         let projectileVelocity = physicsEntity.vel.copy()
-        let surfaceNormal = getNormal(p5.Vector.sub(edge.edgeStart, edge.edgeEnd))
+        let surfaceVector = p5.Vector.sub(edge.edgeStart, edge.edgeEnd)
+        let surfaceNormal = getNormal(surfaceVector)
         return projectileVelocity.reflect(surfaceNormal)
     }
 

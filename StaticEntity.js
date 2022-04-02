@@ -1,10 +1,6 @@
 class StaticEntity {
     constructor(vertices){
         this.vertices = vertices
-        //this.p1 = new createVector(x1, y1)
-        //this.p2 = new createVector(x2, y2)
-        //this.surfaceVector = p5.Vector.sub(this.p1, this.p2)
-        //this.surfaceVector = p5.Vector.sub(this.vertices[0], this.vertices[1])
     }
 
     show() {
@@ -19,7 +15,5 @@ class StaticEntity {
                 line(startPoint.x, startPoint.y, endPoint.x, endPoint.y)
             }
         }
-
-        //line(this.p1.x, this.p1.y, this.p2.x, this.p2.y)
     }
 }

@@ -23,19 +23,6 @@ function draw() {
         ball.vel = physics.inelasticEdgeCollision(ball, collisionEdge)
     }
 
-    ///////////////////////////
-    /*
-    for (const entity of staticEntities) {
-        //const collision = collideLineCircleVector(entity.p1, entity.p2, ball.pos, ball.radius*2)
-        const collision = collideLineCircleVector(entity.vertices[0], entity.vertices[1], ball.pos, ball.radius*2)
-        if(collision) {
-            ball.vel = physics.inelasticCollision(ball, entity)
-            break;
-        }
-    }
-    */
-    ///////////////////////////
-
     ball.applyForce(physics.getFrictionForce(ball))
     ball.update()
     ball.show()
