@@ -36,4 +36,3 @@ class PhysicsEntity {
         line(mouseX, mouseY, this.pos.x, this.pos.y)
     }
 }
-module.exports = PhysicsEntity

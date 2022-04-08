@@ -2,16 +2,21 @@ let ball
 const physics = new PhysicsEngine(0.1)
 let staticEntities = []
 
+function preload() {
+    const LEVEL_URL = 'resources/level1_data.json'
+    const levelLoader = new LevelLoader()
+    loadJSON(LEVEL_URL, levelLoader.loadLevel)
+    /*loadJSON(LEVEL_URL).then(function(value) {
+        return levelLoader.loadLevel(value)
+    })*/
+}
+
 function setup() {
     createCanvas(800, 800);
 
     //Player ball
     ball = new PhysicsEntity(width / 2, width / 2, 16, 1)
     ball.showIndicator = true
-
-    //Map layout
-    //staticEntities.push(new StaticEntity([createVector(0, width/2), createVector(height/1.2, 0), createVector(50, 50)], ))
-    staticEntities.push(new StaticEntity([createVector(50, 50), createVector(width-50, 50)], ))
 }
 
 function draw() {
